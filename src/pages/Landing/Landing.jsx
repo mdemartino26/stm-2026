@@ -18,8 +18,7 @@ export default function Landing() {
 
   return (
     <div className={styles.page}>
-      {/* Imagen decorativa (src/assets/background.svg). Va como <img> y no como background-image
-          para no depender del formato del archivo ni de cómo el bundler lo inserta en el CSS. */}
+
       <img className={styles.backdrop} src={backgroundSrc} alt="" aria-hidden="true" />
 
       <header className={styles.header}>
@@ -34,20 +33,11 @@ export default function Landing() {
           Expandí tu experiencia musical conociendo artistas nuevos
         </Text>
 
-        <div className={styles.actions}>
-          <Button size="md" fullWidth loading={loading} onClick={login}>
+        <div >
+          <Button size="md" fullWidth loading={loading} onClick={login} className="btn-login">
             Ingresá
           </Button>
-          <Button
-            variant="outlined"
-            size="md"
-            fullWidth
-            href={SPOTIFY_SIGNUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Registrate
-          </Button>
+         
         </div>
 
         <div className={styles.demo}>
