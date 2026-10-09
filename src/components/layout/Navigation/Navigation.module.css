@@ -1,0 +1,107 @@
+/* ---------- Compact: barra inferior ---------- */
+.nav {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 30;
+  height: var(--stm-navigation-bar-height);
+  background: var(--md-sys-color-surface-container);
+}
+
+.list {
+  display: flex;
+  height: 100%;
+}
+
+.listItem {
+  display: flex;
+  flex: 1;
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--md-space-1);
+  padding-block: var(--md-space-3) var(--md-space-4);
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+}
+
+/* La "píldora" indicadora de 64x32dp lleva el state layer y el color de activo */
+.indicator {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 32px;
+  border-radius: var(--md-sys-shape-corner-full);
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short2) linear;
+}
+
+@media (hover: hover) {
+  .item:hover .indicator::before {
+    opacity: var(--md-sys-state-hover-opacity);
+  }
+}
+.item:focus-visible .indicator::before,
+.item:active .indicator::before {
+  opacity: var(--md-sys-state-pressed-opacity);
+}
+
+.label {
+  font: var(--md-sys-typescale-label-medium);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+}
+
+.active {
+  color: var(--md-sys-color-on-surface);
+}
+.active .indicator {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+.active .label {
+  font-weight: 700;
+}
+
+/* ---------- Medium en adelante: navigation rail ---------- */
+@media (min-width: 600px) {
+  .nav {
+    inset-block: var(--stm-top-app-bar-height) 0;
+    inset-inline: 0 auto;
+    width: var(--stm-navigation-rail-width);
+    height: auto;
+    background: var(--md-sys-color-surface);
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--md-space-3);
+    padding-top: var(--md-space-3);
+  }
+
+  .listItem {
+    flex: none;
+    width: 100%;
+  }
+
+  .item {
+    padding-block: var(--md-space-1);
+  }
+}

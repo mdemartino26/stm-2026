@@ -1,0 +1,36 @@
+.progress {
+  flex: none;
+  color: var(--progress-color, var(--md-sys-color-primary));
+  animation: rotate 1.4s linear infinite;
+}
+
+.arc {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1 113;
+  stroke-dashoffset: 0;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1 113;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 80 113;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 80 113;
+    stroke-dashoffset: -112;
+  }
+}

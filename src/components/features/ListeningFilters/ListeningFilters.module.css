@@ -1,0 +1,57 @@
+.panel {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.summary {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --state-layer-color: var(--md-sys-color-on-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--md-space-4);
+  min-height: 72px;
+  padding: var(--md-space-3) var(--md-space-4);
+  border-radius: var(--md-sys-shape-corner-large);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon {
+  flex: none;
+  color: var(--md-sys-color-primary);
+}
+
+.title {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.chevron {
+  flex: none;
+  color: var(--md-sys-color-on-surface-variant);
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.panel[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: var(--md-space-2) var(--md-space-4) var(--md-space-5);
+}
+
+.controls {
+  display: grid;
+  gap: var(--md-space-6);
+}
+
+.group {
+  display: grid;
+  gap: var(--md-space-3);
+}

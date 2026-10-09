@@ -1,0 +1,13 @@
+.picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-5);
+}
+
+.selection {
+  display: grid;
+  gap: var(--md-space-3);
+  padding: var(--md-space-4);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-low);
+}

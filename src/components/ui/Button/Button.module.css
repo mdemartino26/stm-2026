@@ -1,0 +1,136 @@
+.button {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --outline-width: 1px;
+  --progress-color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-space-2);
+  margin: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.button > span {
+  min-width: 0;
+}
+
+/* ---------- Tamaños (M3: 40 · 56 · 96dp de alto) ---------- */
+.sm {
+  min-height: 40px;
+  padding-inline: var(--md-space-6);
+  font: var(--md-sys-typescale-label-large);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}
+.sm.hasIcon {
+  padding-inline-start: var(--md-space-4);
+}
+/* El botón de 40dp conserva un área táctil de 48dp */
+.sm::after {
+  content: '';
+  position: absolute;
+  inset-block: -4px;
+  inset-inline: 0;
+}
+
+.md {
+  --outline-width: 2px;
+  min-height: 56px;
+  padding-inline: var(--md-space-8);
+  font: var(--md-sys-typescale-title-medium);
+  font-weight: 700;
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+}
+.md.hasIcon {
+  padding-inline-start: var(--md-space-6);
+  gap: var(--md-space-3);
+}
+
+.lg {
+  --outline-width: 3px;
+  min-height: 96px;
+  padding-inline: var(--md-space-12);
+  gap: var(--md-space-3);
+  font: var(--md-sys-typescale-headline-small);
+  font-weight: 700;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ---------- Variantes ---------- */
+.filled {
+  --state-layer-color: var(--md-sys-color-on-primary);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+@media (hover: hover) {
+  .filled:hover {
+    box-shadow: var(--md-sys-elevation-1);
+  }
+}
+
+.tonal {
+  --state-layer-color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.elevated {
+  --state-layer-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-primary);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+/* Variante de marca: borde naranja y texto claro, como en el diseño de la landing */
+.outlined {
+  --state-layer-color: var(--md-sys-color-on-surface);
+  border: var(--outline-width) solid var(--md-sys-color-primary);
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+}
+
+/* En tamaño md solo el botón relleno va en negrita */
+.md.outlined,
+.md.tonal,
+.md.text,
+.md.elevated {
+  font-weight: 500;
+}
+
+.text {
+  --state-layer-color: var(--md-sys-color-primary);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+}
+.text.sm {
+  padding-inline: var(--md-space-3);
+}
+
+/* ---------- Estados ---------- */
+.loading {
+  cursor: progress;
+}
+
+.button:disabled {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  border-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.button:disabled::before {
+  display: none;
+}
+.outlined:disabled,
+.text:disabled {
+  background: transparent;
+}

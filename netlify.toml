@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Netlify escanea el build buscando valores de variables que parezcan secretos.
+  # Estas dos son públicas por diseño (Vite las incluye en el JS del navegador):
+  # el Client ID de Spotify y la API key de solo lectura de Last.fm.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SPOTIFY_CLIENT_ID,VITE_LASTFM_API_KEY,VITE_DEMO_LASTFM_USER,VITE_SPOTIFY_REDIRECT_URI"
+
+# SPA: cualquier ruta (por ejemplo /callback) tiene que servir index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"

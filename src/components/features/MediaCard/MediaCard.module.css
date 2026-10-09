@@ -1,0 +1,23 @@
+.body {
+  display: grid;
+  gap: var(--md-space-3);
+  align-content: start;
+  padding: var(--md-space-3);
+}
+
+.text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.centered .text {
+  text-align: center;
+}
+
+.badge {
+  justify-self: start;
+}
+.centered .badge {
+  justify-self: center;
+}

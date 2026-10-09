@@ -1,0 +1,21 @@
+.seed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--md-space-4) var(--md-space-6);
+}
+
+.text {
+  display: grid;
+  flex: 1 1 240px;
+  gap: var(--md-space-1);
+  min-width: 0;
+}
+
+.seed .title {
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  flex: none;
+}

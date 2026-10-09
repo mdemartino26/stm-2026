@@ -1,0 +1,90 @@
+.group {
+  display: flex;
+  gap: var(--md-space-2);
+  /* el padding deja lugar al anillo de foco, que si no se recortaría por el overflow */
+  margin: -6px;
+  padding: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.group::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: var(--md-space-2);
+  height: 32px;
+  margin: 0;
+  padding-inline: var(--md-space-4);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-sys-typescale-label-large);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  white-space: nowrap;
+}
+
+.filter {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --state-layer-color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+}
+
+.selected {
+  --state-layer-color: var(--md-sys-color-on-secondary-container);
+  padding-inline-start: var(--md-space-2);
+  border-color: transparent;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.assist {
+  border-color: var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Con `wrap` los chips bajan de línea en vez de desplazarse */
+.wrap {
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.input {
+  gap: var(--md-space-1);
+  padding-inline: var(--md-space-3) var(--md-space-1);
+  border-color: transparent;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.remove {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --state-layer-color: var(--md-sys-color-on-secondary-container);
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Área táctil de 48dp aunque el chip mida 32dp */
+.remove::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+}
+
+.withIcon {
+  padding-inline-start: var(--md-space-2);
+}

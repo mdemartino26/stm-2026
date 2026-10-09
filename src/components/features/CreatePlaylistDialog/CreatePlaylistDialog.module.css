@@ -1,0 +1,11 @@
+.form {
+  display: grid;
+  gap: var(--md-space-4);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--md-space-4);
+  padding-block: var(--md-space-2);
+}

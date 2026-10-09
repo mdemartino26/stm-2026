@@ -1,0 +1,34 @@
+/* State layer de M3, reutilizable con `composes`.
+   El componente define --state-layer-color (por defecto, el color del texto).
+   hover 8% · focus 10% · pressed 10% */
+
+.stateLayer {
+  position: relative;
+  isolation: isolate;
+}
+
+.stateLayer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--state-layer-color, currentColor);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-short2) linear;
+}
+
+@media (hover: hover) {
+  .stateLayer:hover::before {
+    opacity: var(--md-sys-state-hover-opacity);
+  }
+}
+
+.stateLayer:focus-visible::before {
+  opacity: var(--md-sys-state-focus-opacity);
+}
+
+.stateLayer:active::before {
+  opacity: var(--md-sys-state-pressed-opacity);
+}

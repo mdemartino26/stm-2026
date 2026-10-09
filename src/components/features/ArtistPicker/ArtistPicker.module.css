@@ -1,0 +1,14 @@
+.picker {
+  display: grid;
+  gap: var(--md-space-4);
+}
+
+.selected {
+  display: grid;
+  gap: var(--md-space-3);
+}
+
+.skeleton {
+  display: grid;
+  gap: var(--md-space-2);
+}

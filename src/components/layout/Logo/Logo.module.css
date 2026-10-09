@@ -1,0 +1,11 @@
+.logo {
+  display: inline-flex;
+  flex: none;
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+.image {
+  display: block;
+  width: auto;
+  max-width: none;
+}

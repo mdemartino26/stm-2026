@@ -1,0 +1,6 @@
+/* Ancho fijo (hasta 3 dígitos) para que la portada no se corra cuando el ranking pasa de 9 a 10 */
+.rank {
+  flex: none;
+  width: 3ch;
+  text-align: end;
+}

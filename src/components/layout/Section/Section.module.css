@@ -1,0 +1,16 @@
+.section {
+  display: grid;
+  gap: var(--md-space-4);
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--md-space-4);
+}
+
+.titles {
+  display: grid;
+  gap: var(--md-space-1);
+}

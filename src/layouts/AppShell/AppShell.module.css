@@ -1,0 +1,29 @@
+.shell {
+  min-height: 100dvh;
+}
+
+/* Compact: deja lugar a la barra de navegación inferior (80dp) */
+.main {
+  padding: var(--md-space-4) var(--stm-margin) calc(var(--stm-navigation-bar-height) + var(--md-space-6));
+}
+
+.main:focus {
+  outline: none;
+}
+
+.content {
+  display: grid;
+  /* minmax(0, 1fr): una fila que se desplaza (chips) no ensancha toda la pantalla */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-8);
+  max-width: var(--stm-content-max-width);
+  margin-inline: auto;
+}
+
+/* Medium en adelante: deja lugar al navigation rail (80dp) */
+@media (min-width: 600px) {
+  .main {
+    padding: var(--md-space-4) var(--stm-margin) var(--md-space-8);
+    padding-inline-start: calc(var(--stm-navigation-rail-width) + var(--stm-margin));
+  }
+}

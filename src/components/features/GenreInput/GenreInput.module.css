@@ -1,0 +1,21 @@
+.input {
+  display: grid;
+  gap: var(--md-space-3);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--md-space-3);
+}
+
+.field {
+  flex: 1 1 240px;
+  max-width: 360px;
+}
+
+/* El botón queda a la altura del campo (56dp) aunque el campo muestre texto de apoyo debajo */
+.form > button {
+  margin-block-start: var(--md-space-2);
+}

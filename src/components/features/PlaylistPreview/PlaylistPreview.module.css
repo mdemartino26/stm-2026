@@ -1,0 +1,29 @@
+.preview {
+  display: grid;
+  gap: var(--md-space-4);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--md-space-4);
+}
+
+.titles {
+  display: grid;
+  gap: var(--md-space-1);
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--md-space-2);
+}
+
+.skeleton {
+  display: grid;
+  gap: var(--md-space-2);
+}

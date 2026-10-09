@@ -1,0 +1,4 @@
+.skeleton {
+  display: grid;
+  gap: var(--md-space-1);
+}

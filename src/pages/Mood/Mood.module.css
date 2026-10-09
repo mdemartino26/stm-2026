@@ -1,0 +1,25 @@
+/* Columna centrada de lectura: los formularios no se estiran a todo el ancho */
+.column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-6);
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* Las frases de ejemplo van en una sola línea que se desplaza, para no alargar la pantalla */
+.examples {
+  margin-inline: calc(var(--md-space-4) * -1);
+  padding-inline: var(--md-space-4);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Deja lugar para la barra superior fija al bajar hasta el resultado */
+.result {
+  scroll-margin-top: calc(var(--stm-top-app-bar-height) + var(--md-space-4));
+}

@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  gap: var(--stm-gutter);
+  /* el padding deja lugar al anillo de foco, que si no se recortaría por el overflow */
+  margin: -6px;
+  padding: 6px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.item {
+  flex: none;
+  width: 156px;
+  scroll-snap-align: start;
+}
+
+/* Todas las tarjetas del carrusel miden lo mismo que la más alta (la que lleva el chip "Sonando") */
+.item > * {
+  height: 100%;
+}

@@ -1,0 +1,67 @@
+.host {
+  position: fixed;
+  inset-inline: 0;
+  /* En compact queda sobre la barra de navegación inferior */
+  bottom: calc(var(--stm-navigation-bar-height) + var(--md-space-2));
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding-inline: var(--md-space-2);
+  pointer-events: none;
+}
+
+@media (min-width: 600px) {
+  .host {
+    bottom: var(--md-space-6);
+    justify-content: flex-start;
+    padding-inline-start: calc(var(--stm-navigation-rail-width) + var(--md-space-6));
+  }
+}
+
+.snackbar {
+  display: flex;
+  align-items: center;
+  gap: var(--md-space-2);
+  width: min(100%, 560px);
+  min-height: 48px;
+  padding: var(--md-space-1) var(--md-space-2) var(--md-space-1) var(--md-space-4);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  box-shadow: var(--md-sys-elevation-3);
+  pointer-events: auto;
+  animation: snackbar-in var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized-decelerate);
+}
+
+@keyframes snackbar-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  padding-block: var(--md-space-2);
+  font: var(--md-sys-typescale-body-medium);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+
+.action {
+  flex: none;
+  min-height: 40px;
+  padding-inline: var(--md-space-3);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-inverse-primary);
+  font: var(--md-sys-typescale-label-large);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.snackbar .close {
+  color: var(--md-sys-color-inverse-on-surface);
+  --state-layer-color: var(--md-sys-color-inverse-on-surface);
+}

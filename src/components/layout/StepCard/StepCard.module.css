@@ -1,0 +1,36 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-5);
+  padding: var(--md-space-5) var(--md-space-4);
+}
+
+@media (min-width: 600px) {
+  .card {
+    padding: var(--md-space-6);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--md-space-4);
+}
+
+.step {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font: var(--md-sys-typescale-label-large);
+}
+
+.titles {
+  display: grid;
+  gap: var(--md-space-1);
+  min-width: 0;
+}

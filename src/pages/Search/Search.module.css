@@ -1,0 +1,13 @@
+/* Barra de búsqueda y tipo, centrados en una columna de lectura */
+.controls {
+  display: grid;
+  justify-items: center;
+  gap: var(--md-space-4);
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.searchBar {
+  width: 100%;
+}

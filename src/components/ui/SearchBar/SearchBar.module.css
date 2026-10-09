@@ -1,0 +1,53 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--md-space-4);
+  height: 56px;
+  padding-inline: var(--md-space-4) var(--md-space-2);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+.bar:focus-within {
+  outline: 3px solid var(--md-sys-color-secondary);
+  outline-offset: 2px;
+}
+
+.leading {
+  flex: none;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: var(--md-sys-typescale-body-large);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+}
+
+/* El anillo de foco lo dibuja la barra entera (:focus-within), no el input */
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 1;
+}
+
+.input::-webkit-search-cancel-button,
+.input::-webkit-search-decoration {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.spinner {
+  margin-inline-end: var(--md-space-2);
+}

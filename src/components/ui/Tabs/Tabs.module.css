@@ -1,0 +1,77 @@
+.tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-4);
+}
+
+.list {
+  display: flex;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.tab {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --state-layer-color: var(--md-sys-color-on-surface);
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 48px;
+  margin: 0;
+  padding: 0 var(--md-space-4);
+  border: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+}
+
+.tab:focus-visible {
+  outline-offset: -3px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-space-2);
+  height: 100%;
+}
+
+.badge {
+  min-width: 20px;
+  padding: 0 var(--md-space-1);
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 20px;
+}
+
+/* Indicador de 3dp con las esquinas de arriba redondeadas */
+.indicator {
+  position: absolute;
+  inset-inline: var(--md-space-4);
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--md-sys-color-primary);
+  opacity: 0;
+}
+
+.selected {
+  --state-layer-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
+}
+
+.selected .badge {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.selected .indicator {
+  opacity: 1;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--md-space-4);
+}

@@ -1,0 +1,35 @@
+/* Clases de la escala tipográfica M3. Se aplican con el componente <Text variant="..." />. */
+
+.type-display-large { font: var(--md-sys-typescale-display-large); letter-spacing: var(--md-sys-typescale-display-large-tracking); }
+.type-display-medium { font: var(--md-sys-typescale-display-medium); letter-spacing: var(--md-sys-typescale-display-medium-tracking); }
+.type-display-small { font: var(--md-sys-typescale-display-small); letter-spacing: var(--md-sys-typescale-display-small-tracking); }
+
+.type-headline-large { font: var(--md-sys-typescale-headline-large); letter-spacing: var(--md-sys-typescale-headline-large-tracking); }
+.type-headline-medium { font: var(--md-sys-typescale-headline-medium); letter-spacing: var(--md-sys-typescale-headline-medium-tracking); }
+.type-headline-small { font: var(--md-sys-typescale-headline-small); letter-spacing: var(--md-sys-typescale-headline-small-tracking); }
+
+.type-title-large { font: var(--md-sys-typescale-title-large); letter-spacing: var(--md-sys-typescale-title-large-tracking); }
+.type-title-medium { font: var(--md-sys-typescale-title-medium); letter-spacing: var(--md-sys-typescale-title-medium-tracking); }
+.type-title-small { font: var(--md-sys-typescale-title-small); letter-spacing: var(--md-sys-typescale-title-small-tracking); }
+
+.type-label-large { font: var(--md-sys-typescale-label-large); letter-spacing: var(--md-sys-typescale-label-large-tracking); }
+.type-label-medium { font: var(--md-sys-typescale-label-medium); letter-spacing: var(--md-sys-typescale-label-medium-tracking); }
+.type-label-small { font: var(--md-sys-typescale-label-small); letter-spacing: var(--md-sys-typescale-label-small-tracking); }
+
+.type-body-large { font: var(--md-sys-typescale-body-large); letter-spacing: var(--md-sys-typescale-body-large-tracking); }
+.type-body-medium { font: var(--md-sys-typescale-body-medium); letter-spacing: var(--md-sys-typescale-body-medium-tracking); }
+.type-body-small { font: var(--md-sys-typescale-body-small); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+
+.text-truncate {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--lines, 2);
+  overflow: hidden;
+}

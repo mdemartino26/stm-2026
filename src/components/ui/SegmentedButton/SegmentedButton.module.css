@@ -1,0 +1,40 @@
+.group {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-full);
+}
+
+.segment {
+  composes: stateLayer from '../../../styles/stateLayer.module.css';
+  --state-layer-color: var(--md-sys-color-on-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-space-2);
+  min-width: 48px;
+  height: 40px;
+  margin: 0;
+  padding-inline: var(--md-space-4);
+  border: 0;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-label-large);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.segment + .segment {
+  border-inline-start: 1px solid var(--md-sys-color-outline);
+}
+
+.segment:focus-visible {
+  outline-offset: -3px;
+}
+
+.selected {
+  --state-layer-color: var(--md-sys-color-on-secondary-container);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}

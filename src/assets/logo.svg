@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 48" fill="none">
+  <!-- PLACEHOLDER: reemplazá este archivo por tu logo real (mismo nombre: src/assets/logo.svg) -->
+  <path fill="#E76E35" d="M20 2c3 8 12 12 12 25a12 12 0 0 1-24 0c0-7 5-10 7-16 2 3 3 4 4 4 1-5 1-9 1-13z"/>
+  <g font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="14" fill="#FAFAFA">
+    <text x="38" y="14">set</text>
+    <text x="38" y="29">the</text>
+    <text x="38" y="44">mood</text>
+  </g>
+</svg>

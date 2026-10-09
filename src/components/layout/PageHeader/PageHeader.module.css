@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--md-space-4);
+}
+
+.titles {
+  display: grid;
+  gap: var(--md-space-1);
+  min-width: 0;
+}
+
+/* Headline small en compact, headline medium desde 600dp */
+.header .title {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 600px) {
+  .header .title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--md-space-2);
+}
+
+/* Variante centrada: títulos y acciones al medio */
+.center {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.center .titles {
+  justify-items: center;
+}
+.center .actions {
+  justify-content: center;
+}
